@@ -1,15 +1,11 @@
 #!/bin/bash
 # ==========================================================
-#  copy-kernel.sh  ——  一键复制内核镜像到 AnyKernel3
+#  一键复制内核镜像到 AnyKernel3
 #  支持 Image / Image.gz / Image.gz-dtb
 #  路径必须同时包含 out 与 boot 两段
 # ==========================================================
 
 set -euo pipefail
-
-# 目标目录（不存在则自动创建）
-TARGET_DIR="$HOME/AnyKernel3"
-mkdir -p "$TARGET_DIR" || { echo "[错误] 无法创建目标目录 $TARGET_DIR"; exit 1; }
 
 echo "[搜索中] 正在搜索 路径含 out + boot 的 Image / Image.gz / Image.gz-dtb …"
 mapfile -t IMAGE_FILES < <(
